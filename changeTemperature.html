@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Temperature</title>
+</head>
+<body>
+    <form>
+        <p>
+            <label>Fahrenheit</label>
+            <label><input id="inputFahrenheit" type="number" placeholder="Fahrenheit"
+               oninput="temperatureConverter(this.value)"
+               onchange="temperatureConverter(this.value)"></label>
+        </p>
+        <p>Celsius: <span id="outputCelsius"></span></p>
+</form>
+</body>
+<script>
+    function temperatureConverter(valNum) {
+        let result;
+        valNum = parseFloat(valNum);
+        result = (valNum - 32) / 1.8;
+        document.getElementById("outputCelsius").innerHTML = result;
+    }
+</script>
+</html>
